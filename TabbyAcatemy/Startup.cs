@@ -26,10 +26,16 @@ namespace TabbyAcatemy
              options.UseSqlServer(
                 Configuration["ConnectionStrings:DefaultConnection"]));
 
-            services.AddIdentity<CatUser, IdentityRole>()
-                .AddEntityFrameworkStores<CatIdentityDbContext>()
+            services.AddIdentity<CatUser, IdentityRole>(opts => {
+                opts.User.RequireUniqueEmail = true;
+                opts.Password.RequiredLength = 6;
+                opts.Password.RequireNonAlphanumeric = false;
+                opts.Password.RequireLowercase = false;
+                opts.Password.RequireUppercase = false;
+                opts.Password.RequireDigit = false;
+            })  .AddEntityFrameworkStores<CatIdentityDbContext>()
                 .AddDefaultTokenProviders();
-
+                
             services.AddMvc();
         }
 
