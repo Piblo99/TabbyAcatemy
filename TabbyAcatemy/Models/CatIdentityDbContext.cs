@@ -9,7 +9,12 @@ namespace TabbyAcatemy.Models
 {
     public class CatIdentityDbContext : IdentityDbContext<CatUser>
     {
-            public CatIdentityDbContext(DbContextOptions<CatIdentityDbContext> options)
+
+        public CatIdentityDbContext(DbContextOptions<CatIdentityDbContext> options)
      : base(options) { }
+
+        public DbSet<Course> Courses { get; set; }
     }
+
+    
 }

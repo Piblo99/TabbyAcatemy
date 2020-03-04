@@ -26,6 +26,8 @@ namespace TabbyAcatemy
              options.UseSqlServer(
                 Configuration["ConnectionStrings:DefaultConnection"]));
 
+            services.AddScoped<ICourseRepository, SQLCourseRepository>();
+
             services.AddIdentity<CatUser, IdentityRole>(opts => {
                 opts.User.RequireUniqueEmail = true;
                 opts.Password.RequiredLength = 6;
