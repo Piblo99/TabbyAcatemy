@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TabbyAcatemy.Models;
 
 namespace TabbyAcatemy.Migrations
 {
     [DbContext(typeof(CatIdentityDbContext))]
-    partial class CatIdentityDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200304134645_courses")]
+    partial class courses
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -193,10 +195,6 @@ namespace TabbyAcatemy.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Courses");
-
-                    b.HasData(
-                        new { Id = 1, Name = "Linear Algebra" }
-                    );
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

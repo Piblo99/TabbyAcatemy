@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TabbyAcatemy.Models;
 
 namespace TabbyAcatemy.Migrations
 {
     [DbContext(typeof(CatIdentityDbContext))]
-    partial class CatIdentityDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200304135359_SeedCourseTable")]
+    partial class SeedCourseTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

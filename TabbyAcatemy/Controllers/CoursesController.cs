@@ -5,14 +5,20 @@ using System.Linq;
 using System.Threading.Tasks;
 using TabbyAcatemy.Models;
 
+
 namespace TabbyAcatemy.Controllers
 {
     public class CoursesController : Controller
     {
+        private readonly ICourseRepository _courseRepository;
+
+        public CoursesController(ICourseRepository courseRepository)
+        {
+            _courseRepository = courseRepository;
+        }
         public ActionResult Index() { 
-            //CatIdentityDbContext cs = new CatIdentityDbContext();
-            //List<Course> MyCourse = cs.Courses.ToList(); TODO: IMPLEMENT REPOSITORY PATTERN TO GET THIS LIST AND DISPLAY COURSES
-            return View();
+            var model = _courseRepository.GetAllCourses();
+            return View(model);
         }
     }
 }

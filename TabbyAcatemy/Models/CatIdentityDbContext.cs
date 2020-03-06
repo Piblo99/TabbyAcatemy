@@ -14,7 +14,11 @@ namespace TabbyAcatemy.Models
      : base(options) { }
 
         public DbSet<Course> Courses { get; set; }
-    }
 
-    
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            builder.Seed();
+        }
+    }
 }
