@@ -15,7 +15,31 @@ namespace TabbyAcatemy.Models
                 {
                     Id = 1,
                     Name = "Linear Algebra",
-                    PhotoPath = ""
+                    PhotoPath = null
+                },
+                new Course
+                {
+                    Id = 2,
+                    Name = "Theory of Computation",
+                    PhotoPath = null
+                },
+                new Course
+                {
+                    Id = 3,
+                    Name = "Operating Systems",
+                    PhotoPath = null
+                },
+                new Course
+                {
+                    Id = 4,
+                    Name = "Cloud Computing",
+                    PhotoPath = null
+                },
+                new Course
+                {
+                    Id = 5,
+                    Name = "Numerical Analysis",
+                    PhotoPath = null
                 }
                 );
         }

@@ -3,31 +3,40 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-        <link href="~/css/mhm.css" rel="stylesheet" />
-        <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/mhm.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css" />
     <title>@ViewBag.Title</title>
 </head>
 
 <body style="background-color:darkslategray">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark mb-3 blah">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
             <img src="~/images/tabby.png" alt="Tabby cat" />
             <div class="container">
                 <a class="navbar-brand" asp-action="Index" asp-controller="Home">TabbyAcatemy</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a asp-action="Index" asp-controller="Courses" class="nav-link">Courses</a>
                         </li>
                     </ul>
-                </div>
             </div>
         </nav>
     </header>
+
+
+            <div class="row align-items-start blah">
+                <div class="col">
+                    <ul class="list-group">
+                        <li class="list-group-item">Prerequisites</li>
+                        <li class="list-group-item">Readings</li>
+                        <li class="list-group-item">Videos</li>
+                        <li class="list-group-item">Activities</li>
+                        <li class="list-group-item">Quizzes</li>
+                    </ul>
+                </div>
+            </div>
+
+
     <div class="container" style="background-color:darkslategray">
         <main role="main" class="pb-3">
             @RenderBody()

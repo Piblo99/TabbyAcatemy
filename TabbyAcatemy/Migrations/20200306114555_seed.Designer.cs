@@ -10,8 +10,8 @@ using TabbyAcatemy.Models;
 namespace TabbyAcatemy.Migrations
 {
     [DbContext(typeof(CatIdentityDbContext))]
-    [Migration("20200304135359_SeedCourseTable")]
-    partial class SeedCourseTable
+    [Migration("20200306114555_seed")]
+    partial class seed
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -197,7 +197,11 @@ namespace TabbyAcatemy.Migrations
                     b.ToTable("Courses");
 
                     b.HasData(
-                        new { Id = 1, Name = "Linear Algebra" }
+                        new { Id = 1, Name = "Linear Algebra" },
+                        new { Id = 2, Name = "Theory of Computation" },
+                        new { Id = 3, Name = "Operating Systems" },
+                        new { Id = 4, Name = "Cloud Computing" },
+                        new { Id = 5, Name = "Numerical Analysis" }
                     );
                 });
 

@@ -16,9 +16,17 @@ namespace TabbyAcatemy.Controllers
         {
             _courseRepository = courseRepository;
         }
-        public ActionResult Index() { 
+        public ActionResult Index() 
+        { 
             var model = _courseRepository.GetAllCourses();
             return View(model);
         }
+
+        [Route("[controller]/Linear Algebra")]
+        public ActionResult LinearAlgebra()
+        {
+            return View();
+        }
+
     }
 }

@@ -8,17 +8,16 @@
     @foreach (var course in Model)
     {
         var photoPath = "~/images/" + (course.PhotoPath ?? "constructionCat.png");
-        <div class="card m-3" style="min-width: 18rem; max-width:30.5%;">
-            <div class="card-header">
-                <h3>@course.Name</h3>
+        <div class="card bg-dark m-3" style="min-width: 18rem; max-width:30.5%;">
+            <div class="card-header text-white">
+                <h5>@course.Name</h5>
             </div>
 
             <img class="card-img-top imageThumbnail" src="@photoPath"
                  asp-append-version="true" />
             
             <div class="card-footer text-center">       
-                <a asp-controller="home" asp-action="details" asp-route-id="@course.Id"
-                   class="btn btn-primary m-1">View</a>
+                <a asp-controller="Courses" asp-action="@course.Name" class="btn btn-info m-1">View</a>
             </div>
         </div>
     }
